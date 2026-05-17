@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.top-nav {
+    background: #003366;
+    padding: 12px;
+    text-align: center;
+}
+
+.top-nav a {
+    color: white;
+    margin: 0 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.container {
+    display: flex;
+}
+
+
+.side-nav {
+    width: 220px;
+    background: #f2f2f2;
+    height: 100vh;
+}
+
+.side-nav a {
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.content {
+    flex: 1;
+    padding: 25px;
+}
+
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+
+.details {
+    float: left;
+    width: 60%;
+}
+
+img{
+    float: right;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding-top: 80px;
+    position: absolute;
+    top: 2rem;
+}
+
+.green { color: green; }
+.red { color: red; }
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    text-align: center;
+}
+
+h2 {
+    color: #003366;
+}
+
+
+.calendar {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.calendar td, .calendar th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.event {
+    background: #003366;
+    color: white;
+}
+
+
+.section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+button {
+    background: #003366;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}

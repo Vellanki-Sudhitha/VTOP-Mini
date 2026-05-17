@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VTOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+    <a onclick="showSection('mentor')">Mentor</a>
+    <a onclick="showSection('curriculum')">Curriculum</a>
+    <a onclick="showSection('timetable')">Timetable</a>
+    <a onclick="showSection('attendance')">Attendance</a>
+    <a onclick="showSection('courses')">Courses</a>
+    <a onclick="showSection('assignment')">Assignments</a>
+    <a onclick="showSection('calendar')">Calendar</a>
+</div>
+
+<div class="container">
+
+    <!-- SIDE NAV -->
+    <div class="side-nav">
+        <a onclick="showSection('transport')">Transport</a>
+        <a onclick="showSection('hostel')">Hostel</a>
+        <a onclick="showSection('marks')">Marks</a>
+        <a onclick="showSection('grades')">Grades</a>
+        <a onclick="showSection('gradehistory')">Grade History</a>
+        <a onclick="showSection('payments')">Payments</a>
+        <a onclick="showSection('feedback')">Feedback</a>
+    </div>
+
+    <div class="content">
+
+       
+        <div class="section active" id="home">
+            <div class="details">
+                <h2>Student Details</h2>
+                <p><b>Name:</b> Sudhitha</p>
+                <p><b>Register No:</b> 23BCE9909</p>
+                <p><b>Program:</b> B.Tech CSE</p>
+                <p><b>Email:</b> sudhitha@vitap.ac.in</p>
+            </div>
+            <img src="images/sudhitha.jpg" width="200">
+        </div>
+
+
+       
+        <div class="section" id="attendance">
+    <h2>Attendance</h2>
+
+    <!-- Semester Dropdown -->
+    <select onchange="loadAttendance(this.value)">
+        <option>Select Sem</option>
+        <option>Sem 3</option>
+        <option>Sem 4</option>
+    </select>
+
+    <ul id="attendanceList"></ul>
+</div>
+
+        
+        <div class="section" id="marks">
+            <h2>Marks</h2>
+            <ul id="marksList"></ul>
+        </div>
+
+       
+        <div class="section" id="feedback">
+    <h2>Feedback</h2>
+
+    <input id="fb" placeholder="Enter feedback"><br><br>
+    <button onclick="submitFeedback()">Submit</button>
+
+    <h3>Previous Feedback</h3>
+    <div id="feedbackList"></div> 
+</div>
+
+        <<div class="section" id="mentor">
+    <div class="card">
+        <h2>Mentor Details</h2>
+        <p><b>Name:</b> Dr. Shalini</p>
+        <p><b>Cabin:</b> AB-2, 320</p>
+        <p><b>Department:</b> Mathematics</p>
+    </div>
+    </div>
+
+        <div class="section" id="curriculum">
+            <h2>Curriculum</h2>
+            <p>160 Credits | UE: 9 | PE: 22</p>
+        </div>
+
+        <div class="section" id="timetable">
+    <h2>Timetable</h2>
+
+    <select onchange="showTimetable(this.value)">
+        <option>Select Sem</option>
+        <option>Sem 3</option>
+        <option>Sem 4</option>
+    </select>
+
+    <div id="timetableBox"></div>
+</div>
+
+        <div class="section" id="courses">
+    <h2>Courses</h2>
+
+    <select onchange="showCourses(this.value)">
+        <option>Select Sem</option>
+        <option>Sem 3</option>
+        <option>Sem 4</option>
+    </select>
+
+    <ul id="courseList"></ul>
+</div>
+
+<div class="section" id="assignment">
+    <h2>Assignment Upload</h2>
+
+    <input type="file" id="file"><br><br>
+    <button onclick="uploadFile()">Upload</button>
+
+    <h3>Uploaded Files</h3>
+    <div id="fileList"></div>
+</div>
+
+ 
+
+        <div class="section" id="calendar">
+    <h2>Academic Calendar - April</h2>
+
+    <table class="calendar">
+        <tr>
+            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+            <th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>
+
+        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+        <tr><td>13</td><td>14</td>
+            <td class="event">15<br>LAB FAT</td>
+            <td class="event">16<br>LAB FAT</td>
+            <td class="event">17<br>LAB FAT</td>
+            <td class="event">18<br>LAB FAT</td>
+            <td>19</td>
+        </tr>
+        <tr><td>20</td>
+            <td class="event">21<br>LAB FAT</td>
+            <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+        </tr>
+        </table>
+        </div>
+
+        <div class="section" id="transport">
+        <h2>Transport Booking</h2>
+
+        <select id="place" onchange="showRoutes()">
+        <option>Select Place</option>
+        <option>Guntur</option>
+        <option>Vijayawada</option>
+        <option>Tenali</option>
+        </select>
+
+       <select id="route"></select>
+
+       <button onclick="bookTransport()">Book Bus</button>
+       </div>
+
+        <div class="section" id="hostel">
+        <h2>Hostel Booking</h2>
+
+        <select id="gender" onchange="showBlocks()">
+        <option>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        </select>
+
+        <select id="block"></select>
+
+        <select id="roomType">
+        <option>2 Bed</option>
+        <option>3 Bed</option>
+        <option>4 Bed</option>
+        <option>Apartment</option>
+        </select>
+
+        <button onclick="bookHostel()">Book Room</button>
+        </div>
+
+        <div class="section" id="grades">
+            <h2>Grades</h2>
+            <p>S A B C D E F</p>
+        </div>
+
+        <div class="section" id="gradehistory">
+            <h2>CGPA</h2>
+            <p>8.45 / 10</p>
+        </div>
+
+        <div class="section" id="payments">
+        <h2>Payments</h2>
+        <div id="paymentList"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
